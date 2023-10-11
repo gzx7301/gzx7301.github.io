@@ -150,6 +150,23 @@
             </li>
             
             <li class="menu-item-has-children ">
+                <a  href="/maibot/" target="">
+                    mai-bot使用说明
+                </a>
+                
+                <ul>
+                    
+                    <li>
+                        <a  href="/maibot/test/" target="">
+                            test
+                        </a>
+                    </li>
+                    
+                </ul>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
                 <a  href="/aboutme/" target="">
                     关于我
                 </a>
@@ -407,10 +424,30 @@
         </div>
       
 
+    
+        <div class="trm-footer-item">
+            博客已萌萌哒运行 <span id="since" class="trm-accent-color"></span> 天
+        </div>
      
 
+    
+        <div class="trm-footer-item">
+            <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=450 src="//music.163.com/outchain/player?type=0&id=8794254192&auto=0&height=430"></iframe>
+        </div>
      
 </footer>
+
+<script>
+    function show_date_time () {
+        var BirthDay = new Date("03/10/2023 00:01:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>
  
                     <!-- footer end -->
 
