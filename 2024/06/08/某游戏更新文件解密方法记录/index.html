@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="x5-fullscreen" content="true">
+<meta name="full-screen" content="yes">
+<meta name="theme-color" content="#317EFB" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
+<meta name="description" content="本文参照&#x2F;使用部分信息来源   aza.moe仅对内容进行解释说明 此网站与本站无关    0.RequirementsLinux(本文中使用Ubutun  不支持WSL )磁盘空间 约100GB(在Linux系统下需可访问)Python3.app文件速度正常的网络连接(用于下载工具) 1.获取需要的工具工具在这个地方下载 →点我←下载内容     tools&#x2F;Filesystem&#x2F;ca">
+<meta property="og:type" content="article">
+<meta property="og:title" content="某游戏更新文件解密方法记录">
+<meta property="og:url" content="https://gzx7301.top/2024/06/08/%E6%9F%90%E6%B8%B8%E6%88%8F%E6%9B%B4%E6%96%B0%E6%96%87%E4%BB%B6%E8%A7%A3%E5%AF%86%E6%96%B9%E6%B3%95%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="gzx7301">
+<meta property="og:description" content="本文参照&#x2F;使用部分信息来源   aza.moe仅对内容进行解释说明 此网站与本站无关    0.RequirementsLinux(本文中使用Ubutun  不支持WSL )磁盘空间 约100GB(在Linux系统下需可访问)Python3.app文件速度正常的网络连接(用于下载工具) 1.获取需要的工具工具在这个地方下载 →点我←下载内容     tools&#x2F;Filesystem&#x2F;ca">
+<meta property="og:locale">
+<meta property="article:published_time" content="2024-06-08T12:17:09.530Z">
+<meta property="article:modified_time" content="2024-06-08T13:01:23.099Z">
+<meta property="article:author" content="gzx7301&#39;s blog">
+<meta name="twitter:card" content="summary">
+
+
+<title >某游戏更新文件解密方法记录</title>
+
+<!-- Favicon -->
+
+    <link href='https://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png?v=2.1.2' rel='icon' type='image/png' sizes='16x16' ></link>
+
+
+    <link href='fhttps://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png?v=2.1.2' rel='icon' type='image/png' sizes='32x32' ></link>
+
+
+
+    <link href='/site.webmanifest' rel='manifest' ></link>
+
+
+<!-- Plugin -->
+
+
+
+
+    
+<link rel="stylesheet" href="/css/plugins/bootstrap.row.css">
+
+    
+<link rel="stylesheet" href="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.css">
+
+    
+    
+
+
+
+
+<!-- Icon -->
+
+    
+<link rel="stylesheet" href="/css/plugins/font-awesome.min.css">
+
+
+
+
+<!-- Variable -->
+<script>window.ASYNC_CONFIG = {"hostname":"gzx7301.top","author":"gzx7301's blog","root":"/","typed_text":null,"theme_version":"2.1.2","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"https://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png","icon16":"https://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png","icon32":"fhttps://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png","appleTouchIcon":null,"webmanifest":"/site.webmanifest","visibilitychange":false,"hidden":"failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-06-08 21:01:23"};</script>
+
+<!-- Theme mode css -->
+<link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.2" id="trm-switch-style">
+<script>
+    let defaultMode = ASYNC_CONFIG.theme.default !=='auto' ?  ASYNC_CONFIG.theme.default : (window.matchMedia("(prefers-color-scheme: light)").matches ? 'style-light' : 'style-dark')
+    let catchMode = localStorage.getItem('theme-mode') || defaultMode;
+    let type = catchMode === 'style-dark' ? 'add' : 'remove';
+    document.documentElement.classList[type]('dark')
+</script>
+
+<!-- CDN -->
+
+
+    
+    
+
+
+
+<!-- Site Analytics -->
+ 
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+
+  <!-- app wrapper -->
+  <div class="trm-app-frame">
+
+    <!-- page preloader -->
+    <div class="trm-preloader">
+    <div class="trm-holder">
+        <div class="preloader">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+</div>
+    <!-- page preloader end -->
+
+    <!-- change mode preloader -->
+    <div class="trm-mode-swich-animation-frame">
+    <div class="trm-mode-swich-animation">
+        <i class="i-sun"><i class="iconfont far fa-sun"></i></i>
+        <div class="trm-horizon"></div>
+        <i class="i-moon"><i class="iconfont far fa-moon"></i></i>
+    </div>
+</div>
+    <!-- change mode preloader end -->
+
+      <!-- scroll container -->
+      <div id="trm-dynamic-content" class="trm-swup-animation">
+        <div id="trm-scroll-container" class="trm-scroll-container" style="opacity: 0">
+            <!-- top bar -->
+            <header class="trm-top-bar">
+	<div class="container">
+		<div class="trm-left-side">
+			<!-- logo -->
+<a href="/" class="trm-logo-frame trm-anima-link">
+    
+        <img alt="logo" src="https://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png">
+    
+    
+        <div class="trm-logo-text">
+            紫菜<span>gzx7301</span>
+        </div>
+    
+</a>
+<!-- logo end -->
+		</div>
+		<div class="trm-right-side">
+			<!-- menu -->
+<div class="trm-menu">
+    <nav>
+        <ul>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/" target="">
+                    home
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/links/" target="">
+                    友链
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/maibot/" target="">
+                    mai-bot使用说明
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a  href="/thanks/" target="">
+                    鸣谢
+                </a>
+                
+            </li>
+            
+            <li class="menu-item-has-children ">
+                <a data-no-swup href="/about/" target="">
+                    关于
+                </a>
+                
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+<!-- menu end -->
+			
+    <!-- mode switcher place -->
+    <div class="trm-mode-switcher-place">
+        <div class="trm-mode-switcher">
+            <i class="iconfont far fa-sun"></i>
+            <input class="tgl tgl-light" id="trm-swich" type="checkbox">
+            <label class="trm-swich" for="trm-swich"></label>
+            <i class="iconfont far fa-moon"></i>
+        </div>
+    </div>
+    <!-- mode switcher place end -->
+
+			
+		</div>
+		<div class="trm-menu-btn">
+			<span></span>
+		</div>
+	</div>
+</header>
+            <!-- top bar end -->
+
+            <!-- body -->
+            
+<div class="trm-content-start">
+    <!-- banner -->
+    <div class="trm-banner">
+    
+    <!-- banner cover -->
+    <img style="object-position:top;object-fit:cover;" alt="banner" class="trm-banner-cover" src="/img/banner.png">
+    <!-- banner cover end -->
+    
+
+    <!-- banner content -->
+    <div class="trm-banner-content trm-overlay">
+        <div class="container">
+            <div class="row">
+                
+                <div class="col-lg-12">
+
+                    <!-- banner title -->
+                    <div class="trm-banner-text trm-text-center ">
+                        <div class="trm-label trm-mb-20">
+                            NEWS LETTER
+                        </div>
+                        <h1 class="trm-mb-30 trm-hsmb-font">
+                            某游戏更新文件解密方法记录
+                        </h1>
+
+                        
+                            <ul class="trm-breadcrumbs trm-label">
+                                <li>
+                                    <a href="/" class="trm-anima-link">Home</a>
+                                </li>
+                                <li>
+                                    <span>
+                                        2024
+                                    </span>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                    <!-- banner title end -->
+
+                    <!-- scroll hint -->
+                    <span id="scroll-triger" class="trm-scroll-hint-frame">
+                        <div class="trm-scroll-hint"></div>
+                        <span class="trm-label">Scroll down</span>
+                    </span>
+                    <!-- scroll hint end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- banner content end -->
+</div>
+    <!-- banner end -->
+    <div class="container">
+        <div class="row">
+            
+            <div class="trm-page-content col-lg-12">
+                <div id="trm-content" class="trm-content">
+                    <div class="trm-post-info row hidden-sm">
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-calendar-alt trm-icon"></i><br>
+            06/08
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-clock trm-icon"></i><br>
+            20:17
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="post-author" class="trm-card trm-label trm-label-light text-center">
+            <i class="iconfont far fa-user trm-icon"></i><br>
+            gzx7301&#39;s blog
+        </div>
+    </div>
+</div>
+<div class="trm-card ">
+    <article id="article-container" class="trm-publication">
+    <p>本文参照&#x2F;使用部分信息来源</p>
+<details>
+
+<p><a target="_blank" rel="noopener" href="https://aza.moe/blog?post=2023-11-30-Maimai-Reversing">aza.moe</a><br>仅对内容进行解释说明 此网站与本站无关</p>
+</details>
+
+<hr>
+<h2 id="0-Requirements"><a href="#0-Requirements" class="headerlink" title="0.Requirements"></a>0.Requirements</h2><p>Linux(本文中使用Ubutun <font color="#39c5bb"> 不支持WSL </font>)<br>磁盘空间 约100GB(在Linux系统下需可访问)<br>Python3<br>.app文件<br>速度正常的网络连接(用于下载工具)</p>
+<h2 id="1-获取需要的工具"><a href="#1-获取需要的工具" class="headerlink" title="1.获取需要的工具"></a>1.获取需要的工具</h2><p>工具在这个地方下载 <a target="_blank" rel="noopener" href="https://gitdab.com/SEGA/sega/src/branch/master/">→点我←</a><br>下载内容    </p>
+<pre><code>tools/Filesystem/calculate_iv/calculate_iv.py
+tools/Filesystem/calculate_iv/exfat.bin
+tools/Filesystem/fsdecrypt.exe
+keys/AES128_Nu_ALLS/OPT.bin
+keys/AES128_Nu_ALLS/SDGB.bin
+</code></pre>
+<p>所有文件保存至与app文件同一文件夹内即可</p>
+<h2 id="2-操作"><a href="#2-操作" class="headerlink" title="2.操作"></a>2.操作</h2><h3 id="1-准备SDGB-BIN-并进行-第一次解密"><a href="#1-准备SDGB-BIN-并进行-第一次解密" class="headerlink" title="1.准备SDGB.BIN 并进行   第一次解密"></a>1.准备SDGB.BIN 并进行   第一次解密</h3><p>打开 <a target="_blank" rel="noopener" href="https://hexed.it/">https://hexed.it/</a> 将 SDGB.bin 文件拖入<br>在第二行插入NTFS文件头 ( <font color="#39c5bb"> EB 52 90 4E 54 46 53 20 20 20 20 00 10 01 00 00 </font> )<br>右上角另存为覆盖原 SDGB.BIN<br>使用CMD运行(无需管理员权限)    </p>
+<pre><code>fsdecrypt SDGB.bin 0x200000 &lt;in.app&gt; &lt;out.vhd&gt;
+</code></pre>
+<p>过程取决于存储介质的速度</p>
+<h3 id="3-获取-AES-IV-并修改SDGB-bIN"><a href="#3-获取-AES-IV-并修改SDGB-bIN" class="headerlink" title="3. 获取 AES-IV 并修改SDGB.bIN"></a>3. 获取 AES-IV 并修改SDGB.bIN</h3><p>运行 calculate_iv.py (在这步骤我使用的 VSCODE 也可使用其他进行运行)<br>获得 key1 打开 <a target="_blank" rel="noopener" href="https://hexed.it/">https://hexed.it/</a> 将 SDGB.bin 文件拖入<br>在第二行覆盖NTFS文件头的位置<font color="#39c5bb">覆盖</font>为key1<br>右上角另存为覆盖原 SDGB.BIN    </p>
+<ul>
+<li>在此时第一步解出来的 VHD 已经没有用了 可删除</li>
+</ul>
+<h3 id="4-第二次解密并获取-app内部文件"><a href="#4-第二次解密并获取-app内部文件" class="headerlink" title="4.第二次解密并获取.app内部文件"></a>4.第二次解密并获取.app内部文件</h3><p>使用CMD运行(无需管理员权限)    </p>
+<pre><code>fsdecrypt SDGB.bin 0x200000 &lt;in.app&gt; &lt;out.vhd&gt;
+</code></pre>
+<p>过程取决于存储介质的速度</p>
+<h4 id="以下操作转移至-Ubutun-进行"><a href="#以下操作转移至-Ubutun-进行" class="headerlink" title="以下操作转移至 Ubutun 进行"></a>以下操作转移至 Ubutun 进行</h4><p>将第二次解密获得的 vhd 移动&#x2F;挂载至Ubutun内<br>安装 Qemu-nbd(这块我乱安的 如果你下一步的挂载没有问题这一步可跳过)</p>
+<pre><code>sudo apt-get update
+sudo apt-get install nbd-server
+sudo apt-get install qemu
+</code></pre>
+<p>挂载解密出来的 vhd 文件</p>
+<pre><code>sudo modprobe nbd  
+sudo qemu-nbd -c /dev/nbd0 &quot;&lt;Name&gt;.vhd&quot;  
+sudo mount /dev/nbd0 /mnt
+</code></pre>
+<p>&#x2F;mnt 里面应该有 internal_{N}.vhd </p>
+
+</article>
+    
+    
+
+</div>
+<div class="trm-post-next-prev row">
+    <div class="col-lg-12">
+        <!-- title -->
+        <h5 class="trm-title-with-divider">
+            其他文章
+            <span data-number="02"></span>
+        </h5>
+    </div>
+    
+    
+        <div class="col-lg-6">
+    <div class="trm-older-publications-card trm-scroll-animation trm-active-el">
+        <div class="trm-older-publication">
+            
+            <a class="trm-op-top trm-anima-link" href="/2023/11/25/Mai-bot%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/">
+                <span class="trm-op-cover">
+                    <img alt="cover" class="no-fancybox" src="/img/block.jpg">
+                </span>
+                <h6 class="trm-op-title">Mai-Bot 更新日志</h6>
+            </a>
+            <div class="trm-divider trm-mb-15 trm-mt-20"></div>
+            <ul class="trm-card-data trm-label">
+                <li>23/11/25</li>
+                <li>23:33</li>
+                <li>MaiBot</li>
+            </ul>
+        </div>
+    </div>
+</div>
+    
+</div>
+
+    
+
+
+
+                    <div class="trm-divider footer-divider"></div>
+
+                    <!-- footer -->
+                    <footer class="trm-scroll-animation">
+
+    
+        <div class="trm-footer-item">
+            <a rel="noopener" href="https://beian.miit.gov.cn/" target="_blank">下北泽114514号没有备案</a>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>© 2023- 2024</span>
+            <span class="footer-separator"data-separator=" · "></span>
+            <span class="trm-accent-color">紫菜</span>
+        </div>
+    
+
+    
+        <div class="trm-footer-item">
+            <span>
+                由 <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> 驱动 v6.3.0
+            </span>
+            <span class="footer-separator" data-separator=" | "></span>
+            <span> 
+                主题 - 
+                <a rel="noopener" href='https://github.com/MaLuns/hexo-theme-async' target='_blank'>Async</a>
+                v2.1.2
+            </span>
+        </div>
+      
+
+    
+        <div class="trm-footer-item">
+            博客已萌萌哒运行 <span id="since" class="trm-accent-color"></span> 天
+        </div>
+     
+
+     
+</footer>
+
+<script>
+    function show_date_time () {
+        var BirthDay = new Date("03/10/2023 00:01:00");
+        var today = new Date();
+        var timeold = (today.getTime() - BirthDay.getTime());
+        var msPerDay = 24 * 60 * 60 * 1000
+        var day = Math.floor(timeold / msPerDay)
+        since.innerHTML = day
+    }
+    show_date_time()
+</script>
+ 
+                    <!-- footer end -->
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+            <!-- body end -->
+
+            
+
+    <div id="post-toc" class="trm-post-toc">
+      <div class="trm-post-toc-header">
+        目录导航
+      </div>
+      <div class="trm-post-toc-content">
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2"><a rel="nofollow" class="trm-toc-link" href="#0-Requirements"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">0.Requirements</span></a></li><li class="trm-toc-item trm-toc-level-2"><a rel="nofollow" class="trm-toc-link" href="#1-获取需要的工具"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">1.获取需要的工具</span></a></li><li class="trm-toc-item trm-toc-level-2"><a rel="nofollow" class="trm-toc-link" href="#2-操作"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">2.操作</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3"><a rel="nofollow" class="trm-toc-link" href="#1-准备SDGB-BIN-并进行-第一次解密"><span class="trm-toc-number">3.1.</span> <span class="trm-toc-text">1.准备SDGB.BIN 并进行   第一次解密</span></a></li><li class="trm-toc-item trm-toc-level-3"><a rel="nofollow" class="trm-toc-link" href="#3-获取-AES-IV-并修改SDGB-bIN"><span class="trm-toc-number">3.2.</span> <span class="trm-toc-text">3. 获取 AES-IV 并修改SDGB.bIN</span></a></li><li class="trm-toc-item trm-toc-level-3"><a rel="nofollow" class="trm-toc-link" href="#4-第二次解密并获取-app内部文件"><span class="trm-toc-number">3.3.</span> <span class="trm-toc-text">4.第二次解密并获取.app内部文件</span></a></li></ol></li></ol>
+      </div>
+    </div>
+
+            
+<div class="trm-fixed-container">
+    
+        <div class="trm-fixed-btn post-toc-btn" data-title="目录">
+            <i class="iconfont fas fa-th-list"></i>
+        </div>
+    
+    
+        <div class="trm-fixed-btn" data-title="阅读模式" onclick="asyncFun.switchReadMode()">
+            <i class="iconfont fas fa-book-reader"></i>
+        </div>
+    
+    
+    <div id="trm-back-top" class="trm-fixed-btn" data-title="回到顶部">
+        <i class="iconfont fas fa-arrow-up"></i>
+    </div>
+</div>
+        </div>
+      </div>
+      <!-- scroll container end -->
+  </div>
+  <!-- app wrapper end -->
+
+  
+  <!-- Plugin -->
+
+
+
+
+    
+    
+<script src="https://unpkg.com/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    
+
+    
+
+    
+
+    <!-- 数学公式 -->
+    
+
+    <!-- 评论插件 -->
+    
+        
+
+        
+    
+
+
+
+<!-- CDN -->
+
+
+    
+
+    
+
+    
+
+
+
+
+    <!-- Service Worker -->
+    
+    <!-- baidu push -->
+    
+
+
+<script id="async-script" src="/js/main.js?v=2.1.2"></script>
+
+</body>
+
+</html>
