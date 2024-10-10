@@ -7,15 +7,15 @@
 <meta name="full-screen" content="yes">
 <meta name="theme-color" content="#317EFB" />
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=0" name="viewport">
-<meta name="description" content="本文参照&#x2F;使用部分信息来源   aza.moe仅对内容进行解释说明 内容与本站无关    0.RequirementsLinux(本文中使用Ubutun  不支持WSL )磁盘空间 约100GB(在Linux系统下需可访问)Python3游戏的.app文件速度正常的网络连接(用于下载工具) 1.获取需要的工具 因为这个游戏使用了特殊的加密 需要借用其他项目的一些工具  工具在这个地方下载">
+<meta name="description" content="本文参照&#x2F;使用部分信息来源   aza.moe仅对内容进行解释说明 内容与本站无关    0.Requirements 非WSL的Linux环境 (本文中使用Ubutun)磁盘空间 约100GB(在Linux下需可访问)Python3游戏的.app文件速度正常的网络连接(用于下载工具) 1.获取需要的工具 因为这个游戏使用了特殊的加密 需要借用其他项目的一些工具  工具在这个地方下载 →">
 <meta property="og:type" content="article">
 <meta property="og:title" content="单机游戏资源解密方法记录">
 <meta property="og:url" content="https://gzx7301.top/2024/06/08/%E6%9F%90%E6%B8%B8%E6%88%8F%E6%9B%B4%E6%96%B0%E6%96%87%E4%BB%B6%E8%A7%A3%E5%AF%86%E6%96%B9%E6%B3%95%E8%AE%B0%E5%BD%95/index.html">
 <meta property="og:site_name" content="gzx7301">
-<meta property="og:description" content="本文参照&#x2F;使用部分信息来源   aza.moe仅对内容进行解释说明 内容与本站无关    0.RequirementsLinux(本文中使用Ubutun  不支持WSL )磁盘空间 约100GB(在Linux系统下需可访问)Python3游戏的.app文件速度正常的网络连接(用于下载工具) 1.获取需要的工具 因为这个游戏使用了特殊的加密 需要借用其他项目的一些工具  工具在这个地方下载">
+<meta property="og:description" content="本文参照&#x2F;使用部分信息来源   aza.moe仅对内容进行解释说明 内容与本站无关    0.Requirements 非WSL的Linux环境 (本文中使用Ubutun)磁盘空间 约100GB(在Linux下需可访问)Python3游戏的.app文件速度正常的网络连接(用于下载工具) 1.获取需要的工具 因为这个游戏使用了特殊的加密 需要借用其他项目的一些工具  工具在这个地方下载 →">
 <meta property="og:locale">
 <meta property="article:published_time" content="2024-06-08T12:17:09.530Z">
-<meta property="article:modified_time" content="2024-06-08T13:14:19.456Z">
+<meta property="article:modified_time" content="2024-10-10T13:59:30.050Z">
 <meta property="article:author" content="gzx7301&#39;s blog">
 <meta name="twitter:card" content="summary">
 
@@ -60,8 +60,8 @@
 
 
 <!-- Variable -->
-<script>window.ASYNC_CONFIG = {"hostname":"gzx7301.top","author":"gzx7301's blog","root":"/","typed_text":null,"theme_version":"2.1.2","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"https://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png","icon16":"https://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png","icon32":"fhttps://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png","appleTouchIcon":null,"webmanifest":"/site.webmanifest","visibilitychange":false,"hidden":"failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false}};</script>
-<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-06-08 21:14:19"};</script>
+<script>window.ASYNC_CONFIG = {"hostname":"gzx7301.top","author":"gzx7301's blog","root":"/","typed_text":null,"theme_version":"2.1.2","theme":{"switch":true,"default":"auto"},"favicon":{"logo":"https://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png","icon16":"https://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png","icon32":"fhttps://img-cdn.akass.cn/25/2023/01/63c7b4719c700.png","appleTouchIcon":null,"webmanifest":"/site.webmanifest","visibilitychange":false,"hidden":"failure.ico","showText":"(/≧▽≦/)咦！又好了！","hideText":"(●—●)喔哟，崩溃啦！"},"i18n":{"placeholder":"搜索文章...","empty":"找不到您查询的内容: ${query}","hits":"找到 ${hits} 条结果","hits_time":"找到 ${hits} 条结果（用时 ${time} 毫秒）","author":"本文作者：","copyright_link":"本文链接：","copyright_license_title":"版权声明：","copyright_license_content":"本博客所有文章除特别声明外，均默认采用 undefined 许可协议。","copy_success":"复制成功","copy_failure":"复制失败","open_read_mode":"进入阅读模式","exit_read_mode":"退出阅读模式","notice_outdate_message":"距离上次更新已经 undefined 天了, 文章内容可能已经过时。","just":"刚刚","min":"分钟前","hour":"小时前","day":"天前","month":"个月前"},"swup":false,"plugin":{"flickr_justified_gallery":"https://unpkg.com/flickr-justified-gallery@latest/dist/fjGallery.min.js"},"icons":{"sun":"far fa-sun","moon":"far fa-moon","play":"fas fa-play","email":"far fa-envelope","next":"fas fa-arrow-right","calendar":"far fa-calendar-alt","clock":"far fa-clock","user":"far fa-user","back_top":"fas fa-arrow-up","close":"fas fa-times","search":"fas fa-search","reward":"fas fa-hand-holding-usd","user_tag":"fas fa-user-alt","toc_tag":"fas fa-th-list","read":"fas fa-book-reader","arrows":"fas fa-arrows-alt-h","double_arrows":"fas fa-angle-double-down","copy":"fas fa-copy"},"icontype":"font","highlight":{"plugin":"highlighjs","theme":true,"copy":true,"lang":true,"title":"default","height_limit":false},"toc":{"post_title":false}};</script>
+<script id="async-page-config">window.PAGE_CONFIG = {"isPost":true,"isHome":false,"postUpdate":"2024-10-10 21:59:30"};</script>
 
 <!-- Theme mode css -->
 <link data-swup-theme rel="stylesheet" href="/css/index.css?v=2.1.2" id="trm-switch-style">
@@ -154,13 +154,6 @@
             <li class="menu-item-has-children ">
                 <a  href="/links/" target="">
                     友链
-                </a>
-                
-            </li>
-            
-            <li class="menu-item-has-children ">
-                <a  href="/maibot/" target="">
-                    mai-bot使用说明
                 </a>
                 
             </li>
@@ -294,7 +287,7 @@
 </details>
 
 <hr>
-<h2 id="0-Requirements"><a href="#0-Requirements" class="headerlink" title="0.Requirements"></a>0.Requirements</h2><p>Linux(本文中使用Ubutun <font color="#39c5bb"> 不支持WSL </font>)<br>磁盘空间 约100GB(在Linux系统下需可访问)<br>Python3<br>游戏的.app文件<br>速度正常的网络连接(用于下载工具)</p>
+<h2 id="0-Requirements"><a href="#0-Requirements" class="headerlink" title="0.Requirements"></a>0.Requirements</h2><p><font color="#39c5bb"> 非WSL的Linux环境 </font>(本文中使用Ubutun)<br>磁盘空间 约100GB(在Linux下需可访问)<br>Python3<br>游戏的.app文件<br>速度正常的网络连接(用于下载工具)</p>
 <h2 id="1-获取需要的工具"><a href="#1-获取需要的工具" class="headerlink" title="1.获取需要的工具"></a>1.获取需要的工具</h2><ul>
 <li>因为这个游戏使用了特殊的加密 需要借用其他项目的一些工具</li>
 </ul>
@@ -303,22 +296,25 @@
 tools/Filesystem/calculate_iv/exfat.bin
 tools/Filesystem/fsdecrypt.exe
 keys/AES128_Nu_ALLS/OPT.bin
-keys/AES128_Nu_ALLS/?.bin
+keys/AES128_Nu_ALLS/[游戏代号].bin
 </code></pre>
 <p>所有文件保存至与app文件同一文件夹内即可</p>
-<h2 id="2-操作"><a href="#2-操作" class="headerlink" title="2.操作"></a>2.操作</h2><h3 id="1-准备-BIN-并进行-第一次解密"><a href="#1-准备-BIN-并进行-第一次解密" class="headerlink" title="1.准备?.BIN 并进行   第一次解密"></a>1.准备?.BIN 并进行   第一次解密</h3><p>打开 <a target="_blank" rel="noopener" href="https://hexed.it/">https://hexed.it/</a> 将 ?.bin 文件拖入<br>在第二行插入NTFS文件头 ( <font color="#39c5bb"> EB 52 90 4E 54 46 53 20 20 20 20 00 10 01 00 00 </font> )<br>右上角另存为覆盖原 ?.BIN<br>使用CMD运行(无需管理员权限)    </p>
-<pre><code>fsdecrypt ?.bin 0x200000 &lt;in.app&gt; &lt;out.vhd&gt;
+<h2 id="2-操作"><a href="#2-操作" class="headerlink" title="2.操作"></a>2.操作</h2><h3 id="1-准备-游戏代号-BIN-并进行-第一次解密"><a href="#1-准备-游戏代号-BIN-并进行-第一次解密" class="headerlink" title="1.准备[游戏代号].BIN 并进行   第一次解密"></a>1.准备[游戏代号].BIN 并进行   第一次解密</h3><p>打开 <a target="_blank" rel="noopener" href="https://hexed.it/">https://hexed.it/</a> 将 [游戏代号].bin 文件拖入<br>在第二行插入NTFS文件头 ( <font color="#39c5bb"> EB 52 90 4E 54 46 53 20 20 20 20 00 10 01 00 00 </font> )<br>右上角另存为覆盖原 ?.BIN<br>使用CMD运行(无需管理员权限)    </p>
+<pre><code>fsdecrypt [游戏代号].bin 0x200000 &lt;in.app&gt; &lt;out.vhd&gt;
 </code></pre>
 <p>过程取决于存储介质的速度</p>
-<h3 id="3-获取-AES-IV-并修改-bIN"><a href="#3-获取-AES-IV-并修改-bIN" class="headerlink" title="3. 获取 AES-IV 并修改?.bIN"></a>3. 获取 AES-IV 并修改?.bIN</h3><p>运行 calculate_iv.py (在这步骤我使用的 VSCODE 也可使用其他进行运行)<br>获得 key1 打开 <a target="_blank" rel="noopener" href="https://hexed.it/">https://hexed.it/</a> 将 ?.bin 文件拖入<br>在第二行覆盖NTFS文件头的位置<font color="#39c5bb">覆盖</font>为key1<br>右上角另存为覆盖原 ?.BIN    </p>
+<h3 id="3-获取-AES-IV-并修改-游戏代号-bIN"><a href="#3-获取-AES-IV-并修改-游戏代号-bIN" class="headerlink" title="3. 获取 AES-IV 并修改[游戏代号].bIN"></a>3. 获取 AES-IV 并修改[游戏代号].bIN</h3><p>运行 calculate_iv.py (在这步骤我使用的 VSCODE 也可使用其他进行运行)<br>获得 key1 打开 <a target="_blank" rel="noopener" href="https://hexed.it/">https://hexed.it/</a> 将 ?.bin 文件拖入<br>在第二行覆盖NTFS文件头的位置<font color="#39c5bb">覆盖</font>为key1<br>右上角另存为覆盖原 [游戏代号].BIN    </p>
 <ul>
-<li>修改?.BIN后 第一步解出来的 VHD 已经没有用了 可删除</li>
+<li>修改[游戏代号].BIN后 第一步解出来的 VHD 已经没有用了 可删除</li>
 </ul>
 <h3 id="4-第二次解密并获取-app内部文件"><a href="#4-第二次解密并获取-app内部文件" class="headerlink" title="4.第二次解密并获取.app内部文件"></a>4.第二次解密并获取.app内部文件</h3><p>使用CMD运行(无需管理员权限)    </p>
-<pre><code>fsdecrypt ?.bin 0x200000 &lt;in.app&gt; &lt;out.vhd&gt;
+<pre><code>fsdecrypt [游戏代号].bin 0x200000 &lt;in.app&gt; &lt;out.vhd&gt;
 </code></pre>
 <p>过程取决于存储介质的速度</p>
-<h4 id="以下操作转移至-Ubutun-进行"><a href="#以下操作转移至-Ubutun-进行" class="headerlink" title="以下操作转移至 Ubutun 进行"></a>以下操作转移至 Ubutun 进行</h4><p>将第二次解密获得的 vhd 移动&#x2F;挂载至Ubutun内<br>安装 Qemu-nbd(这块我基本乱安的 如果你下一步的挂载没有问题这一步可跳过)</p>
+<h4 id="以下操作转移至-Linux环境-进行"><a href="#以下操作转移至-Linux环境-进行" class="headerlink" title="以下操作转移至 Linux环境 进行"></a>以下操作转移至 Linux环境 进行</h4><ul>
+<li>将第二次解密获得的 vhd 使用 Qemu-nbd 挂载至Linux环境</li>
+</ul>
+<p>安装 Qemu-nbd(这块我使用的 Ubutun基本乱安的 如果你下一步的挂载没有问题这一步可跳过)</p>
 <pre><code>sudo apt-get update
 sudo apt-get install nbd-server
 sudo apt-get install qemu
@@ -441,7 +437,7 @@ sudo mount /dev/nbd0 /mnt
         目录导航
       </div>
       <div class="trm-post-toc-content">
-        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2"><a rel="nofollow" class="trm-toc-link" href="#0-Requirements"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">0.Requirements</span></a></li><li class="trm-toc-item trm-toc-level-2"><a rel="nofollow" class="trm-toc-link" href="#1-获取需要的工具"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">1.获取需要的工具</span></a></li><li class="trm-toc-item trm-toc-level-2"><a rel="nofollow" class="trm-toc-link" href="#2-操作"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">2.操作</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3"><a rel="nofollow" class="trm-toc-link" href="#1-准备-BIN-并进行-第一次解密"><span class="trm-toc-number">3.1.</span> <span class="trm-toc-text">1.准备?.BIN 并进行   第一次解密</span></a></li><li class="trm-toc-item trm-toc-level-3"><a rel="nofollow" class="trm-toc-link" href="#3-获取-AES-IV-并修改-bIN"><span class="trm-toc-number">3.2.</span> <span class="trm-toc-text">3. 获取 AES-IV 并修改?.bIN</span></a></li><li class="trm-toc-item trm-toc-level-3"><a rel="nofollow" class="trm-toc-link" href="#4-第二次解密并获取-app内部文件"><span class="trm-toc-number">3.3.</span> <span class="trm-toc-text">4.第二次解密并获取.app内部文件</span></a></li></ol></li></ol>
+        <ol class="trm-toc"><li class="trm-toc-item trm-toc-level-2"><a rel="nofollow" class="trm-toc-link" href="#0-Requirements"><span class="trm-toc-number">1.</span> <span class="trm-toc-text">0.Requirements</span></a></li><li class="trm-toc-item trm-toc-level-2"><a rel="nofollow" class="trm-toc-link" href="#1-获取需要的工具"><span class="trm-toc-number">2.</span> <span class="trm-toc-text">1.获取需要的工具</span></a></li><li class="trm-toc-item trm-toc-level-2"><a rel="nofollow" class="trm-toc-link" href="#2-操作"><span class="trm-toc-number">3.</span> <span class="trm-toc-text">2.操作</span></a><ol class="trm-toc-child"><li class="trm-toc-item trm-toc-level-3"><a rel="nofollow" class="trm-toc-link" href="#1-准备-游戏代号-BIN-并进行-第一次解密"><span class="trm-toc-number">3.1.</span> <span class="trm-toc-text">1.准备[游戏代号].BIN 并进行   第一次解密</span></a></li><li class="trm-toc-item trm-toc-level-3"><a rel="nofollow" class="trm-toc-link" href="#3-获取-AES-IV-并修改-游戏代号-bIN"><span class="trm-toc-number">3.2.</span> <span class="trm-toc-text">3. 获取 AES-IV 并修改[游戏代号].bIN</span></a></li><li class="trm-toc-item trm-toc-level-3"><a rel="nofollow" class="trm-toc-link" href="#4-第二次解密并获取-app内部文件"><span class="trm-toc-number">3.3.</span> <span class="trm-toc-text">4.第二次解密并获取.app内部文件</span></a></li></ol></li></ol>
       </div>
     </div>
 
